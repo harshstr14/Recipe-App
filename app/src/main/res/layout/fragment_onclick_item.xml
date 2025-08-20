@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".OnclickItem">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/leftarrowimg"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/left_arrows"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="15dp"
+            app:tint="?attr/colorOnBackground" />
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:text="Classic Margherita Pizza"
+            android:textColor="?attr/colorOnBackground"
+            android:fontFamily="sans-serif-black"
+            android:textSize="20sp"
+            android:textAllCaps="true"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/leftarrowimg"
+            />
+
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview1"
+            android:text="italian"
+            android:textColor="#DA4B2C"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif-black"
+            android:textSize="16sp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="15dp"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview"
+            android:layout_width="match_parent"
+            android:layout_height="183dp"
+            app:cardCornerRadius="12dp"
+            android:elevation="5dp"
+            android:layout_below="@id/textview2"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="13dp"
+            >
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/pizza"
+                android:scaleType="centerCrop"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/favbtn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:focusable="true"
+            app:cardCornerRadius="18dp"
+            android:layout_below="@id/cardview"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:cardElevation="5dp"
+            android:clickable="true"
+            android:backgroundTint="#E8E8E8"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FA6F51">
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/favorite"
+                    android:layout_marginEnd="3dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/txt"
+                    app:tint="#F4F4F4" />
+
+                <TextView
+                    android:id="@+id/txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add to Favorites"
+                    android:textColor="#F4F4F4"
+                    android:textSize="15sp"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif-medium"
+                    />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/favbtn"
+            android:text="Time : "
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="50dp"/>
+        <TextView
+            android:id="@+id/timetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/favbtn"
+            android:text="30"
+            android:gravity="center"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp"
+            android:layout_toEndOf="@id/txt1"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="3dp"/>
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/favbtn"
+            android:text="Difficulty : "
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@id/timetxt"
+            android:layout_marginStart="55dp"/>
+        <TextView
+            android:id="@+id/difftxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/favbtn"
+            android:text="Easy"
+            android:gravity="center"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp"
+            android:layout_toEndOf="@id/txt2"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="3dp"/>
+        <TextView
+            android:id="@+id/txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calories : "
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="50dp"
+            android:layout_below="@id/txt1"/>
+        <TextView
+            android:id="@+id/caltxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="300"
+            android:gravity="center"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp"
+            android:layout_below="@id/txt1"
+            android:layout_toEndOf="@id/txt3"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="3dp"/>
+        <TextView
+            android:id="@+id/txt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating : "
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="65dp"
+            android:layout_below="@id/txt2"
+            android:layout_toEndOf="@id/txt3"/>
+        <TextView
+            android:id="@+id/reviewtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.9"
+            android:gravity="center"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp"
+            android:layout_toEndOf="@id/txt4"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/txt2"
+            android:layout_marginStart="3dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt3"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="5dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/txt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ingredients :"
+                    android:textColor="#DA4B2C"
+                    android:textSize="16sp"
+                    android:textAllCaps="true"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_marginTop="1dp"
+                    />
+                <TextView
+                    android:id="@+id/ingredientstxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt5"
+                    android:textColor="?attr/colorOnBackground"
+                    android:textSize="15sp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginEnd="10dp"
+                    />
+                <TextView
+                    android:id="@+id/txt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ingredientstxt"
+                    android:text="Instructions :"
+                    android:textColor="#DA4B2C"
+                    android:textSize="16sp"
+                    android:textAllCaps="true"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_marginTop="8dp"
+                    />
+                <TextView
+                    android:id="@+id/instructionstxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt6"
+                    android:textColor="?attr/colorOnBackground"
+                    android:textSize="15sp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginEnd="10dp"
+                    />
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</FrameLayout>

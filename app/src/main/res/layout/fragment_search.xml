@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Search">
+
+    <com.example.recipedia.CustomSearchView
+        android:id="@+id/customSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginHorizontal="18dp" />
+
+<!--    <SearchView-->
+<!--        android:id="@+id/searchview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="18dp"-->
+<!--        android:layout_marginEnd="18dp"-->
+<!--        android:layout_marginTop="3dp"-->
+<!--        android:layout_marginBottom="18dp"-->
+<!--        android:iconifiedByDefault="false"-->
+<!--        android:backgroundTint="#F4F4F4"-->
+<!--        android:background="@drawable/background"-->
+<!--        android:queryHint="Search Recipe Here.."-->
+<!--        android:queryBackground="@android:color/transparent"-->
+<!--        />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        tools:listitem="@layout/eachitem_design"
+        />
+
+</FrameLayout>
