@@ -18,10 +18,10 @@ Recipedia is a mobile application that lets users explore, search, and save thei
 ## 📸 Screenshots
 
 <p align="left">
-  <img src="assets/home_screen-portrait.png" alt="Home Screen" height="400" hspace=10 vspace=10/>
-  <img src="assets/details_screen-portrait.png" alt="Details Screen" height="400" hspace=10 vspace=10/>
-  <img src="assets/search_screen-portrait.png" alt="Search Screen" height="400" hspace=10 vspace=10/>
-  <img src="assets/favourite_screen-portrait.png" alt="Favourite Screen" height="400" hspace=10 vspace=10/>
+  <img src="assets/home_screen-portrait.png" alt="Home Screen" height="400" margin: 10px;/>
+  <img src="assets/details_screen-portrait.png" alt="Details Screen" height="400" margin: 10px;/>
+  <img src="assets/search_screen-portrait.png" alt="Search Screen" height="400" margin: 10px;/>
+  <img src="assets/favourite_screen-portrait.png" alt="Favourite Screen" height="400" margin: 10px;/>
 </p>
 
 ## 🛠️ Technology Stack
