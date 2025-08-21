@@ -1,29 +1,29 @@
-# 🍲 Recipedia - Android Recipe Application 
+# 🍲Recipedia - Android Recipe Application 
 
 Recipedia is a mobile application that lets users explore, search, and save their favorite recipes with ease. Built with Kotlin and powered by Firebase 🔥 and the DummyJSON API, the app provides an interactive and personalized cooking experience.
 
 ## ✨ Features and Functionality
 
-*  🍽️**Browse Recipes :** View a curated list of recipes fetched from a remote API.
-*  🔍**Search Recipes :** Find specific recipes by name using a custom search view.
-*  📖**View Recipe Details :** Tap on a recipe to see detailed information, including ingredients and instructions.
-*  ❤️**Save Favorite Recipes :** Authenticated users can save recipes to their favorites list, stored in Firebase Realtime Database.
-*  👤**User Authentication :**  Sign-up and login functionality using Firebase Authentication.
-*  🧭**Navigation :** Bottom navigation bar for quick access to Home, Search, and Favorites. Navigation drawer for accessing the same features as well as logout.
-*  🖼️**Image Slider :**  Display a rotating carousel of featured recipe images on the home screen.
-*  🔔**Notifications :** Receive a notification when a recipe is added to your favorites.
+*  🍽️ **Browse Recipes :** View a curated list of recipes fetched from a remote API.
+*  🔍 **Search Recipes :** Find specific recipes by name using a custom search view.
+*  📖 **View Recipe Details :** Tap on a recipe to see detailed information, including ingredients and instructions.
+*  ❤️ **Save Favorite Recipes :** Authenticated users can save recipes to their favorites list, stored in Firebase Realtime Database.
+*  👤 **User Authentication :**  Sign-up and login functionality using Firebase Authentication.
+*  🧭 **Navigation :** Bottom navigation bar for quick access to Home, Search, and Favorites. Navigation drawer for accessing the same features as well as logout.
+*  🖼️ **Image Slider :**  Display a rotating carousel of featured recipe images on the home screen.
+*  🔔 **Notifications :** Receive a notification when a recipe is added to your favorites.
 
 ## 🛠️ Technology Stack
 
-*  💻**Kotlin:** Primary programming language for Android development.
-*  📱**Android SDK:**  Platform for building the Android application.
-*  🧩**Android Jetpack:** Set of libraries to help build robust, testable, and maintainable apps (e.g., `Fragment`, `RecyclerView`, `ViewBinding`).
-*  🌐**Retrofit:**  HTTP client library for making network requests to the dummyjson.com API.
-*  📦**Gson:**  JSON library for serializing and deserializing data.
-*  🖼️**Picasso:**  Image loading and caching library.
-*  🔥**Firebase Authentication:** User authentication service.
-*  ☁️**Firebase Realtime Database:**  Cloud-based NoSQL database for storing user favorites.
-*  🎠**ImageSlider:** Third party library used to implement Image Slider.
+*  💻 **Kotlin:** Primary programming language for Android development.
+*  📱 **Android SDK:**  Platform for building the Android application.
+*  🧩 **Android Jetpack:** Set of libraries to help build robust, testable, and maintainable apps (e.g., `Fragment`, `RecyclerView`, `ViewBinding`).
+*  🌐 **Retrofit:**  HTTP client library for making network requests to the dummyjson.com API.
+*  📦 **Gson:**  JSON library for serializing and deserializing data.
+*  🖼️ **Picasso:**  Image loading and caching library.
+*  🔥 **Firebase Authentication:** User authentication service.
+*  ☁️ **Firebase Realtime Database:**  Cloud-based NoSQL database for storing user favorites.
+*  🎠 **ImageSlider:** Third party library used to implement Image Slider.
 
 ## 📋 Prerequisites
 
