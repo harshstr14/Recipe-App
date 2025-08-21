@@ -1,5 +1,7 @@
 # 🍲Recipedia - Android Recipe Application 
 
+## 📜 Description
+
 Recipedia is a mobile application that lets users explore, search, and save their favorite recipes with ease. Built with Kotlin and powered by Firebase 🔥 and the DummyJSON API, the app provides an interactive and personalized cooking experience.
 
 ## ✨ Features and Functionality
