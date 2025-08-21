@@ -15,6 +15,8 @@ Recipedia is a mobile application that lets users explore, search, and save thei
 *  🖼️ **Image Slider :**  Display a rotating carousel of featured recipe images on the home screen.
 *  🔔 **Notifications :** Receive a notification when a recipe is added to your favorites.
 
+## 📸 Screenshots
+
 ## 🛠️ Technology Stack
 
 *  💻 **Kotlin:** Primary programming language for Android development.
