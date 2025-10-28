@@ -163,28 +163,28 @@ Recipedia is a mobile application that lets users explore, search, and save thei
     *   If you don't have an account, click on "Sign up" and provide the required information (name, username, email, password, and accept the terms and conditions).
     *   If you already have an account, click on "Login" and enter your email and password.
 
-2.  **🏠 Browse Recipes (Home):**
+2.  **🏠 Browse Recipes (Home) :**
     *   The Home screen displays a list of recipes.
     *   Tap on a recipe item to view the details.
     *   A carousel of featured recipes is also displayed at the top.
 
-3.  **🔍 Search Recipes:**
+3.  **🔍 Search Recipes :**
     *   Navigate to the "Search" screen using the bottom navigation bar or the navigation drawer.
     *   Use the `CustomSearchView` to enter your search query.
     *   The recipe list will update dynamically as you type.
 
-4.  **📖 View Recipe Details:**
+4.  **📖 View Recipe Details :**
     *   On the Home or Search screens, tap a recipe to open the `OnclickItem` fragment.
     *   View the recipe's image, cuisine, difficulty, cook time, rating, ingredients, and instructions.
     *   Click the "Favorite" button to add the recipe to your favorites. A notification will confirm the action.
 
-5.  **❤️ Favorites:**
+5.  **❤️ Favorites :**
     *   Navigate to the "Favorites" screen using the bottom navigation bar or the navigation drawer.
     *   View a list of your saved recipes.
     *   Tap on a recipe to view its details.
     *   Tap the delete button next to a recipe to remove it from your favorites.
 
-6.  **🚪 Logout:**
+6.  **🚪 Logout :**
      *  Open the navigation drawer.
      *  Select the "Logout" option. You will be redirected to the login page.
 
@@ -192,9 +192,9 @@ Recipedia is a mobile application that lets users explore, search, and save thei
 
 This application utilizes the [dummyjson.com](https://dummyjson.com/) API to retrieve recipe data.
 
-*   **Endpoint:** `https://dummyjson.com/recipes`
-*   **Method:** `GET`
-*   **Response:** Returns a JSON object containing an array of recipe objects.
+*   **Endpoint :** `https://dummyjson.com/recipes`
+*   **Method :** `GET`
+*   **Response :** Returns a JSON object containing an array of recipe objects.
 
 ## 🤝 Contributing Guidelines
 
