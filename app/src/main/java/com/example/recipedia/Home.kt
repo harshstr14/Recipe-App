@@ -110,6 +110,7 @@ class Home : Fragment() {
                 homeAdapter1 = HomeAdapter1(requireContext(),recipeList)
                 recyclerView1.adapter = homeAdapter1
                 recyclerView1.layoutManager = LinearLayoutManager(requireContext())
+                recyclerView1.isNestedScrollingEnabled = false
 
                 homeAdapter1.setOnItemClickListener(object : HomeAdapter1.OnItemClickListener{
                     override fun onItemClick(position: Int) {

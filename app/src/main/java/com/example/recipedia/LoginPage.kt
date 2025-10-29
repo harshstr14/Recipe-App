@@ -5,10 +5,17 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import com.example.recipedia.databinding.ActivityLoginPageBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -21,10 +28,12 @@ class LoginPage : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityLoginPageBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityLoginPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        enableEdgeToEdgeWithInsets(binding.root,binding.main)
 
         val pref = getSharedPreferences("Pref_name",MODE_PRIVATE)
         val isLoggedIn = pref.getBoolean("isLoggedIn",false)
@@ -94,5 +103,18 @@ class LoginPage : AppCompatActivity() {
             }
         }
     }
+    private fun enableEdgeToEdgeWithInsets(rootView: View, LayoutView: View) {
+        val activity = rootView.context as ComponentActivity
+        WindowCompat.setDecorFitsSystemWindows(activity.window, false)
 
+        ViewCompat.setOnApplyWindowInsetsListener(rootView) { _, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            LayoutView.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = systemBars.bottom
+            }
+
+            insets
+        }
+    }
 }

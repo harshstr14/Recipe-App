@@ -3,7 +3,9 @@ package com.example.recipedia
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import androidx.activity.ComponentActivity
 import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -13,6 +15,10 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.core.view.GravityCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.recipedia.databinding.ActivityMainBinding
@@ -29,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+
+        enableEdgeToEdgeWithInsets(binding.root,binding.drawerLayout)
 
         drawerLayout = binding.drawerLayout
         navView = binding.navView
@@ -132,7 +140,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    fun updateBottomNavSelection() {
+    private fun updateBottomNavSelection() {
         clearSelection()
         val currentFragment = supportFragmentManager.findFragmentById(R.id.framelayout)
         when(currentFragment) {
@@ -147,7 +155,7 @@ class MainActivity : AppCompatActivity() {
             is Favorite -> binding.navView.setCheckedItem(R.id.nav_favorite)
         }
     }
-    fun replaceWithFragment(fragment: Fragment) {
+    private fun replaceWithFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
@@ -160,7 +168,7 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }
-    fun onItemClick(imageViewCompat: AppCompatImageView) {
+    private fun onItemClick(imageViewCompat: AppCompatImageView) {
         clearSelection()
         imageViewCompat.isSelected = true
         val animation = AnimationUtils.loadAnimation(this,R.anim.nav_item_click)
@@ -170,5 +178,19 @@ class MainActivity : AppCompatActivity() {
         binding.navbarHome.isSelected = false
         binding.navbarSearch.isSelected = false
         binding.navbarFavorite.isSelected = false
+    }
+    private fun enableEdgeToEdgeWithInsets(rootView: View, LayoutView: View) {
+        val activity = rootView.context as ComponentActivity
+        WindowCompat.setDecorFitsSystemWindows(activity.window, false)
+
+        ViewCompat.setOnApplyWindowInsetsListener(rootView) { _, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            LayoutView.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = systemBars.bottom
+            }
+
+            insets
+        }
     }
 }

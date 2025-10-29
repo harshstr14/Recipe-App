@@ -3,10 +3,17 @@ package com.example.recipedia
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import com.example.recipedia.databinding.ActivityLoginPage2Binding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -19,10 +26,12 @@ class LoginPage2 : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         binding = ActivityLoginPage2Binding.inflate(layoutInflater)
+        super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+
+        enableEdgeToEdgeWithInsets(binding.root,binding.main)
 
         binding.loginbtn.setOnClickListener {
             val mail = binding.mail.text.toString().trim()
@@ -41,7 +50,6 @@ class LoginPage2 : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
     private fun readData(mail: String, password: String) {
         val pref = getSharedPreferences("Pref_name", MODE_PRIVATE)
 
@@ -62,6 +70,20 @@ class LoginPage2 : AppCompatActivity() {
         }.addOnFailureListener { e ->
             Log.e("Auth", "FirebaseAuth error: ${e.message}", e)
             Toast.makeText(this, "Log-In failed. Please try again.", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun enableEdgeToEdgeWithInsets(rootView: View, LayoutView: View) {
+        val activity = rootView.context as ComponentActivity
+        WindowCompat.setDecorFitsSystemWindows(activity.window, false)
+
+        ViewCompat.setOnApplyWindowInsetsListener(rootView) { _, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            LayoutView.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = systemBars.bottom
+            }
+
+            insets
         }
     }
 }

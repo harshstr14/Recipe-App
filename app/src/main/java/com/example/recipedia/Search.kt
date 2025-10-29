@@ -103,15 +103,22 @@ class Search : Fragment() {
                     }
 
                     override fun onQueryTextChange(newText: String): Boolean {
-                        filterer(newText,recipeList)
+                        if (newText.trim().isEmpty()) {
+                            recyclerView.visibility = View.GONE
+                            filteredList.clear()
+                            searchAdpater.filterList(filteredList)
+                        } else {
+                            filterer(newText, recipeList)
+                        }
                         return true
                     }
-
                 })
             }
 
             override fun onFailure(call: Call<Data?>, t: Throwable) {
-                Log.d("Search","OnFailure: " + t.message)
+                Log.d("Search", "OnFailure: ${t.message}")
+                recyclerView.visibility = View.GONE
+                Toast.makeText(requireContext(), "Failed to load data", Toast.LENGTH_SHORT).show()
             }
         })
     }
@@ -125,9 +132,13 @@ class Search : Fragment() {
             }
             if (filteredList.isEmpty()) {
                 context?.let {
+                    binding.tvNoResults.visibility = View.VISIBLE
+                    recyclerView.visibility = View.GONE
                     Toast.makeText(requireContext(),"Recipe Not Found", Toast.LENGTH_SHORT).show()
                 }
             } else {
+                binding.tvNoResults.visibility = View.GONE
+                recyclerView.visibility = View.VISIBLE
                 searchAdpater.filterList(filteredList)
             }
         }

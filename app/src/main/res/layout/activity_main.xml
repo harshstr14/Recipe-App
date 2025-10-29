@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawer_layout"
     android:layout_width="wrap_content"
-    tools:openDrawer="star"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -54,7 +53,7 @@
             <LinearLayout
                 android:id="@+id/bottomNavigationBar"
                 android:layout_width="match_parent"
-                android:layout_height="73dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal"
                 android:gravity="center_horizontal"
                 android:layout_alignParentBottom="true">

@@ -6,33 +6,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Home">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
 
-        <com.denzcoskun.imageslider.ImageSlider
-            android:id="@+id/image_slider"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginBottom="12dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            app:iss_auto_cycle="true"
-            app:iss_period="2000"
-            app:iss_delay="2000"
-            app:iss_text_align="CENTER"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/recyclerview1"
-            tools:listitem="@layout/eachitem_design"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            >
-        </androidx.recyclerview.widget.RecyclerView>
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                app:iss_auto_cycle="true"
+                app:iss_period="2000"
+                app:iss_delay="2000"
+                app:iss_text_align="CENTER"/>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerview1"
+                tools:listitem="@layout/eachitem_design"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:nestedScrollingEnabled="false" >
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 </FrameLayout>
