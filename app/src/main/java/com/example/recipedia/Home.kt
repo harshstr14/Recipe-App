@@ -23,7 +23,7 @@ class Home : Fragment() {
     lateinit var recyclerView1: RecyclerView
     lateinit var homeAdapter1: HomeAdapter1
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentHomeBinding.inflate(inflater,container,false)
         return binding.root
     }

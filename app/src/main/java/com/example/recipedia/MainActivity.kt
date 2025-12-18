@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import androidx.activity.ComponentActivity
 import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -16,7 +15,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import androidx.drawerlayout.widget.DrawerLayout
@@ -36,7 +34,9 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        enableEdgeToEdgeWithInsets(binding.root,binding.drawerLayout)
+        binding.root.post {
+            handleBottomNavPosition()
+        }
 
         drawerLayout = binding.drawerLayout
         navView = binding.navView
@@ -76,21 +76,18 @@ class MainActivity : AppCompatActivity() {
                     if (currentFragment !is Home) {
                         replaceWithFragment(Home())
                     }
-                    true
                 }
                 R.id.search_nav -> {
                     val currentFragment = supportFragmentManager.findFragmentById(R.id.framelayout)
                     if (currentFragment !is Search) {
                         replaceWithFragment(Search())
                     }
-                    true
                 }
                 R.id.nav_favorite -> {
                     val currentFragment = supportFragmentManager.findFragmentById(R.id.framelayout)
                     if (currentFragment !is Favorite) {
                         replaceWithFragment(Favorite())
                     }
-                    true
                 }
                 R.id.nav_logout -> {
                     val pref = getSharedPreferences("Pref_name",MODE_PRIVATE)
@@ -103,7 +100,6 @@ class MainActivity : AppCompatActivity() {
             drawerLayout.closeDrawers()
             true
         }
-
 
         binding.navbarHome.setOnClickListener {
             val home = binding.navbarHome
@@ -179,18 +175,34 @@ class MainActivity : AppCompatActivity() {
         binding.navbarSearch.isSelected = false
         binding.navbarFavorite.isSelected = false
     }
-    private fun enableEdgeToEdgeWithInsets(rootView: View, LayoutView: View) {
-        val activity = rootView.context as ComponentActivity
-        WindowCompat.setDecorFitsSystemWindows(activity.window, false)
+    private fun Int.dpToPx(view: View): Int =
+        (this * view.resources.displayMetrics.density).toInt()
 
-        ViewCompat.setOnApplyWindowInsetsListener(rootView) { _, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+    private fun handleBottomNavPosition() {
+        ViewCompat.getRootWindowInsets(binding.root)?.let { insets ->
 
-            LayoutView.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-                bottomMargin = systemBars.bottom
+            val navBarHeight =
+                insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
+
+            // Typical values:
+            // Gesture: 16–24dp
+            // 3-button: 48–80dp
+
+            val threshold = 40.dpToPx(binding.root)
+
+            binding.drawerLayout.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = if (navBarHeight > threshold) {
+                    navBarHeight   // 3-button → move up
+                } else {
+                    0              // Gesture → stay at bottom
+                }
             }
-
-            insets
+            if (navBarHeight < threshold) {
+                binding.bottomNavigationBar.updateLayoutParams {
+                    height = 62.dpToPx(binding.drawerLayout)
+                }
+                binding.bottomNavigationBar.setPadding(0,0,0,10.dpToPx(binding.bottomNavigationBar))
+            }
         }
     }
 }

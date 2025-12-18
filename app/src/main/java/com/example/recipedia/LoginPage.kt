@@ -103,14 +103,14 @@ class LoginPage : AppCompatActivity() {
             }
         }
     }
-    private fun enableEdgeToEdgeWithInsets(rootView: View, LayoutView: View) {
+    private fun enableEdgeToEdgeWithInsets(rootView: View, layoutView: View) {
         val activity = rootView.context as ComponentActivity
         WindowCompat.setDecorFitsSystemWindows(activity.window, false)
 
         ViewCompat.setOnApplyWindowInsetsListener(rootView) { _, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 
-            LayoutView.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+            layoutView.updateLayoutParams<ViewGroup.MarginLayoutParams> {
                 bottomMargin = systemBars.bottom
             }
 

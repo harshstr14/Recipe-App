@@ -23,7 +23,7 @@ class Search : Fragment() {
     lateinit var searchAdpater: SearchAdpater
     lateinit var filteredList: ArrayList<Recipe>
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSearchBinding.inflate(inflater,container,false)
         return binding.root
     }

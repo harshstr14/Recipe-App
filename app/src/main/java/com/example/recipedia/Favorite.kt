@@ -21,7 +21,7 @@ class Favorite : Fragment() {
     lateinit var database: DatabaseReference
     lateinit var auth: FirebaseAuth
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentFavoriteBinding.inflate(inflater,container,false)
         return binding.root
     }
