@@ -1,6 +1,7 @@
 package com.example.recipedia
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +16,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.updateLayoutParams
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -34,9 +37,18 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        binding.root.post {
-            handleBottomNavPosition()
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            window.isNavigationBarContrastEnforced = false
         }
+
+        WindowInsetsControllerCompat(
+            window,
+            window.decorView
+        ).isAppearanceLightNavigationBars = false
+
+        handleBottomNavPosition()
 
         drawerLayout = binding.drawerLayout
         navView = binding.navView
@@ -179,10 +191,9 @@ class MainActivity : AppCompatActivity() {
         (this * view.resources.displayMetrics.density).toInt()
 
     private fun handleBottomNavPosition() {
-        ViewCompat.getRootWindowInsets(binding.root)?.let { insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
 
-            val navBarHeight =
-                insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
+            val navBarHeight = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
 
             // Typical values:
             // Gesture: 16–24dp
@@ -203,6 +214,8 @@ class MainActivity : AppCompatActivity() {
                 }
                 binding.bottomNavigationBar.setPadding(0,0,0,10.dpToPx(binding.bottomNavigationBar))
             }
+
+            insets
         }
     }
 }
