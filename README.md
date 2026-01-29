@@ -1,11 +1,11 @@
 ![Screens](./assets/Bsnner(Recipedia).png)
-# 🍲Recipedia - Android Recipe Application 
+# 🍲𝗥𝗲𝗰𝗶𝗽𝗲𝗱𝗶𝗮 - 𝗔𝗻𝗱𝗿𝗼𝗶𝗱 𝗥𝗲𝗰𝗶𝗽𝗲 𝗔𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻
 
-## 📜 Description
+## 📜 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻
 
 Recipedia is a mobile application that lets users explore, search, and save their favorite recipes with ease. Built with Kotlin and powered by Firebase 🔥 and the DummyJSON API, the app provides an interactive and personalized cooking experience.
 
-## ✨ Features and Functionality
+## ✨ 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀 𝗮𝗻𝗱 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝗮𝗹𝗶𝘁𝘆
 
 *  🍽️ **Browse Recipes :** View a curated list of recipes fetched from a remote API.
 *  🔍 **Search Recipes :** Find specific recipes by name using a custom search view.
@@ -16,7 +16,7 @@ Recipedia is a mobile application that lets users explore, search, and save thei
 *  🖼️ **Image Slider :**  Display a rotating carousel of featured recipe images on the home screen.
 *  🔔 **Notifications :** Receive a notification when a recipe is added to your favorites.
 
-## 📸 Screenshots
+## 📸 𝗦𝗰𝗿𝗲𝗲𝗻𝘀𝗵𝗼𝘁𝘀
 
 <p align="left">
   <img src="assets/home_screen-portrait.png" alt="Home Screen" height="400" hspace=10" />
@@ -25,7 +25,7 @@ Recipedia is a mobile application that lets users explore, search, and save thei
   <img src="assets/favourite_screen-portrait.png" alt="Favourite Screen" height="400" hspace=10" />
 </p>
 
-## 🛠️ Technology Stack
+## 🛠️ 𝗧𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝘆 𝗦𝘁𝗮𝗰𝗸
 
 *  💻 **Kotlin:** Primary programming language for Android development.
 *  📱 **Android SDK:**  Platform for building the Android application.
@@ -37,13 +37,13 @@ Recipedia is a mobile application that lets users explore, search, and save thei
 *  ☁️ **Firebase Realtime Database:**  Cloud-based NoSQL database for storing user favorites.
 *  🎠 **ImageSlider:** Third party library used to implement Image Slider.
 
-## 📋 Prerequisites
+## 📋 𝗣𝗿𝗲𝗿𝗲𝗾𝘂𝗶𝘀𝗶𝘁𝗲𝘀
 
 *  🛠️ Android Studio installed.
 *  🔥 A Firebase project set up with Authentication and Realtime Database enabled.
 *  📱 An Android device or emulator to run the application.
 
-## ⚙️ Installation Instructions
+## ⚙️ 𝗜𝗻𝘀𝘁𝗮𝗹𝗹𝗮𝘁𝗶𝗼𝗻 𝗜𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻𝘀
 
 1.  **Clone the Repository :**
 
@@ -157,7 +157,7 @@ Recipedia is a mobile application that lets users explore, search, and save thei
     *   Connect an Android device or start an emulator.
     *   Click the "Run" button in Android Studio.
 
-## 📖 Usage Guide
+## 📖 𝗨𝘀𝗮𝗴𝗲 𝗚𝘂𝗶𝗱𝗲
 
 1.  **👤 Sign Up/Login :**
     *   Launch the application.
@@ -189,7 +189,7 @@ Recipedia is a mobile application that lets users explore, search, and save thei
      *  Open the navigation drawer.
      *  Select the "Logout" option. You will be redirected to the login page.
 
-## 🌐 API Documentation
+## 🌐 𝗔𝗣𝗜 𝗗𝗼𝗰𝘂𝗺𝗲𝗻𝘁𝗮𝘁𝗶𝗼𝗻
 
 This application utilizes the [dummyjson.com](https://dummyjson.com/) API to retrieve recipe data.
 
@@ -197,7 +197,7 @@ This application utilizes the [dummyjson.com](https://dummyjson.com/) API to ret
 *   **Method :** `GET`
 *   **Response :** Returns a JSON object containing an array of recipe objects.
 
-## 🤝 Contributing Guidelines
+## 🤝 𝗖𝗼𝗻𝘁𝗿𝗶𝗯𝘂𝘁𝗶𝗻𝗴 𝗚𝘂𝗶𝗱𝗲𝗹𝗶𝗻𝗲𝘀
 
 Contributions are welcome! To contribute :
 
@@ -207,10 +207,10 @@ Contributions are welcome! To contribute :
 4. ⬆️ Push your changes to your forked repository.
 5. 🔀 Submit a pull request to the main repository.
 
-## 📜 License Information
+## 📜 𝗟𝗶𝗰𝗲𝗻𝘀𝗲 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻
 
 ⚠️ No license specified. All rights reserved.
 
-## 📧 Contact/Support Information
+## 📧 𝗖𝗼𝗻𝘁𝗮𝗰𝘁/𝗦𝘂𝗽𝗽𝗼𝗿𝘁 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻
 
 For questions or support, please contact: harshstr14@gmail.com
